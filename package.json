@@ -14,7 +14,8 @@
 	},
 	"icon": "images/mock-debug-icon.svg",
 	"categories": [
-		"Debuggers"
+		"Debuggers",
+		"Languages"
 	],
 	"private": true,
 	"repository": {
@@ -107,6 +108,17 @@
 				},
 				"initialConfigurations": "extension.mock-debug.provideInitialConfigurations"
 			}
-		]
+		],
+		"languages": [{
+			"id": "tla+",
+			"aliases": ["TLA+", "tla+"],
+			"extensions": [".tla"],
+			"configuration": "./language-configuration.json"
+		}],
+		"grammars": [{
+			"language": "tla+",
+			"scopeName": "source.tla",
+			"path": "./syntaxes/TLA.tmLanguage"
+		}]
 	}
 }
