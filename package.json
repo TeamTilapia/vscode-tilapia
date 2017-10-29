@@ -15,7 +15,8 @@
 	"icon": "images/mock-debug-icon.svg",
 	"categories": [
 		"Debuggers",
-		"Languages"
+		"Languages",
+		"Themes"
 	],
 	"private": true,
 	"repository": {
@@ -63,14 +64,11 @@
 			{
 				"type": "mock",
 				"label": "Mock Debug",
-
 				"program": "./out/mockDebug.js",
 				"runtime": "node",
-
 				"variables": {
 					"AskForProgramName": "extension.mock-debug.getProgramName"
 				},
-
 				"configurationSnippets": [
 					{
 						"label": "Mock Debug: Launch",
@@ -83,10 +81,11 @@
 						}
 					}
 				],
-
 				"configurationAttributes": {
 					"launch": {
-						"required": [ "program" ],
+						"required": [
+							"program"
+						],
 						"properties": {
 							"program": {
 								"type": "string",
@@ -109,16 +108,32 @@
 				"initialConfigurations": "extension.mock-debug.provideInitialConfigurations"
 			}
 		],
-		"languages": [{
-			"id": "tla+",
-			"aliases": ["TLA+", "tla+"],
-			"extensions": [".tla"],
-			"configuration": "./language-configuration.json"
-		}],
-		"grammars": [{
-			"language": "tla+",
-			"scopeName": "source.tla",
-			"path": "./syntaxes/TLA.tmLanguage"
-		}]
+		"languages": [
+			{
+				"id": "tla+",
+				"aliases": [
+					"TLA+",
+					"tla+"
+				],
+				"extensions": [
+					".tla"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "tla+",
+				"scopeName": "source.tla",
+				"path": "./syntaxes/TLA.tmLanguage"
+			}
+		],
+		"themes": [
+			{
+				"label": "Dark (Molokai) (for TLA+)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/dark-molokai-tla-color-theme.json"
+			}
+		]
 	}
 }
