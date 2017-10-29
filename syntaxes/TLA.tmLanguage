@@ -23,6 +23,24 @@
 			<string>\*\)</string>
 			<key>name</key>
 			<string>comment.block</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>--(fair )?algorithm [a-zA-Z0-9]+ {</string>
+					<key>end</key>
+					<string>}</string>
+					<key>name</key>
+					<string>text.pluscal</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#pluscal</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -210,6 +228,53 @@
 			<string>\b(ACTION|ASSUME|ASSUMPTION|AXIOM|BY|CASE|CHOOSE|CONSTANT|CONSTANTS|COROLLARY|DEF|DEFINE|DEFS|DOMAIN|ELSE|ENABLED|EXCEPT|EXTENDS|HAVE|HIDE|IF|IN|INSTANCE|LAMBDA|LEMMA|LET|LOCAL|MODULE|NEW|OBVIOUS|OMITTED|ONLY|OTHER|PICK|PROOF|PROPOSITION|PROVE|QED|RECURSIVE|SF_|STATE|SUBSET|SUFFICES|TAKE|TEMPORAL|THEN|THEOREM|UNCHANGED|UNION|USE|VARIABLE|VARIABLES|WF_|WITH|WITNESS)\b</string>
 			<key>name</key>
 			<string>keyword.control.tla</string>
+		</dict>
+		<key>pluscal</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>{</string>
+					<key>end</key>
+					<string>}</string>
+					<key>name</key>
+					<string>invalid</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#pluscal</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\\\*.*$</string>
+					<key>name</key>
+					<string>comment.line.slash-star</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>\(\*</string>
+					<key>end</key>
+					<string>\*\)</string>
+					<key>name</key>
+					<string>comment.block</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(while|if|else|variables|do|end|print)\b</string>
+					<key>name</key>
+					<string>keyword.control.pluscal</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(\\h[0-9a-fA-F]+|\\o[0-9]+|\\b[01]+|\d+\.\d+|\d+)\b</string>
+					<key>name</key>
+					<string>constant.numeric</string>
+				</dict>
+			</array>
 		</dict>
 	</dict>
 	<key>scopeName</key>
