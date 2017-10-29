@@ -1,3 +1,4 @@
+\* from: https://github.com/tlaplus/Examples/blob/522e59293a4c87d3dd1070af704f423725d48e04/specifications/Bakery-Boulangerie/Bakery.tla
 ------------ MODULE Bakery ----------------------------
 (***************************************************************************)
 (* The bakery algorithm originally appeared in:                            *)
