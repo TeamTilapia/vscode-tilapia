@@ -27,7 +27,7 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>--(fair )?algorithm [a-zA-Z0-9]+ {</string>
+					<string>--(fair )?algorithm\s+[a-zA-Z0-9]+\s+{</string>
 					<key>end</key>
 					<string>}</string>
 					<key>name</key>
@@ -108,7 +108,7 @@
 			<key>name</key>
 			<string>keyword.operator.functions.tla</string>
 		</dict>
-        <dict>
+                <dict>
 			<key>match</key>
 			<string>\\(approx|asymp|bigcirc|bullet|cap|cdot|circ|cong|cup|div|doteq|equiv|geq|gg|in|intersect|land|leq|ll|lor|o|odot|ominus|oplus|oslash|otimes|prec|preceq|propto|sim|simeq|sqcap|sqcup|sqsubset|sqsubseteq|sqsupset|sqsupseteq|star|subset|subseteq|succ|succeq|supset|supseteq|union|uplus|wr)\b</string>
 			<key>name</key>
@@ -254,6 +254,12 @@
 					<key>name</key>
 					<string>comment.line.slash-star</string>
 				</dict>
+                                <dict>
+			          <key>match</key>
+                                  <string>\\(approx|asymp|bigcirc|bullet|cap|cdot|circ|cong|cup|div|doteq|equiv|geq|gg|in|intersect|land|leq|ll|lor|o|odot|ominus|oplus|oslash|otimes|prec|preceq|propto|sim|simeq|sqcap|sqcup|sqsubset|sqsubseteq|sqsupset|sqsupseteq|star|subset|subseteq|succ|succeq|supset|supseteq|union|uplus|wr)\b</string>
+			          <key>name</key>
+			          <string>keyword.operator.latex.pluscal</string>
+		                </dict>
 				<dict>
 					<key>begin</key>
 					<string>\(\*</string>
@@ -264,9 +270,15 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(while|if|else|variables|do|end|print)\b</string>
+					<string>\b(while|if|else|variable|variables|do|end|print|with|either|or|call|goto|fair|process)\b</string>
 					<key>name</key>
 					<string>keyword.control.pluscal</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>([\w\d]+):</string>
+					<key>name</key>
+					<string>keyword.control.label.pluscal</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -274,6 +286,42 @@
 					<key>name</key>
 					<string>constant.numeric</string>
 				</dict>
+                                <dict>
+			          <key>match</key>
+			          <string>(\|\-&gt;|\-&gt;)</string>
+			          <key>name</key>
+			          <string>keyword.operator.pluscal</string>
+		                </dict>
+                                <dict>
+			          <key>match</key>
+			          <string>(\/\\|\\\/|\=&gt;|&lt;\=&gt;|\|\=|\=\||\|\-|\-\||~)</string>
+			          <key>name</key>
+			          <string>keyword.operator.logic.pluscal</string>
+		                </dict>
+                                <dict>
+			          <key>match</key>
+			          <string>(:=)</string>
+			          <key>name</key>
+			          <string>keyword.operator.assignment.pluscal</string>
+		                </dict>
+                                <dict>
+			          <key>match</key>
+			          <string>(!=|&gt;=|&lt;=)</string>
+			          <key>name</key>
+			          <string>keyword.operator.comparison.pluscal</string>
+		                </dict>
+                                <dict>
+			          <key>match</key>
+                                  <string>(TRUE|FALSE|BOOLEAN)</string>
+			          <key>name</key>
+			          <string>constant.language.boolean.pluscal</string>
+		                </dict>
+		                <dict>
+			          <key>match</key>
+			          <string>\\</string>
+			          <key>name</key>
+			          <string>keyword.operator.sets.pluscal</string>
+		                </dict>
 			</array>
 		</dict>
 	</dict>
