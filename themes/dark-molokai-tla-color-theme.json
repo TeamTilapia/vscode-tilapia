@@ -49,6 +49,13 @@
 	"tokenColors": [
 		{
 			"name": "PlusCal text (within a TLA+ comment)",
+			"scope": "keyword.control.label.pluscal",
+			"settings":{
+				"foreground": "#A6E22E"
+			}
+		},
+		{
+			"name": "PlusCal text (within a TLA+ comment)",
 			"scope": "text.pluscal",
 			"settings":{
 				"foreground": "#F8F8F2"
